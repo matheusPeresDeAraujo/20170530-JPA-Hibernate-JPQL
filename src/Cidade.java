@@ -1,4 +1,7 @@
 import javax.persistence.*;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 @Entity
 public class Cidade {
 	
@@ -11,7 +14,8 @@ public class Cidade {
 	private Double pib;
 	private Boolean capital;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@Fetch(FetchMode.SELECT)
     @JoinColumn(name = "cidade_id", nullable=false)
 	private Estado estado;
 

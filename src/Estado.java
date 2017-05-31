@@ -15,7 +15,7 @@ public class Estado {
 	private String sigla;
 	private String regiao;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "pais_id", nullable=false)
 	private Pais pais;
 	
