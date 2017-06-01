@@ -58,8 +58,13 @@ public class Main {
 		em1.persist(c2);
 		
 		em1.getTransaction().commit();
+<<<<<<< HEAD
 		*/
 		/*
+=======
+		
+		
+>>>>>>> eb5a2aba06425d7bb8f89e6ef37fe8e8ddb49e91
 		EntityManager em = Persistence.createEntityManagerFactory("mapeamentoAtividade_unit").createEntityManager();	
 //		Liste os país com com pib maior que 1.000.000.
 		TypedQuery<Pais> query = em.createQuery("select p from Pais p where p.pib > 1000000", Pais.class);
@@ -118,11 +123,17 @@ public class Main {
 		em8.close();
 		*/
 		EntityManager em9 = Persistence.createEntityManagerFactory("mapeamentoAtividade_unit").createEntityManager();
+<<<<<<< HEAD
 //		Liste o nome do estado, o nome do país ao qual pertence, e sua capital, se houver. 
 		TypedQuery<Object[]> query9 = em9.createQuery("SELECT p.nome, e.nome, c.nome FROM Pais p JOIN p.estados e LEFT JOIN e.cidades c ON c.capital = true", Object[].class);
+=======
+//		Liste o nome do estado, o nome do país ao qual pertence, e sua capital, se houver.
+		TypedQuery<Object[]> query9 = em9.createQuery("SELECT p FROM Pais p JOIN  p.estados e JOIN FETCH e.cidades c WHERE c.capital = 'true' ", Object[].class);
+>>>>>>> eb5a2aba06425d7bb8f89e6ef37fe8e8ddb49e91
 		List<Object[]> result = query9.getResultList();
 		 
 		for(Object[] itens : result){
+<<<<<<< HEAD
 			String nameP = (String) itens[0];
 			String nameE = (String) itens[1];
 			String nameC = (String) itens[2];
@@ -130,6 +141,12 @@ public class Main {
 			
 			System.out.println(nameP + nameE + nameC + x);
 			
+=======
+			String nameE = (String) itens[0];
+			String nameP = (String) itens[1];
+			String nameC = (String) itens[2];
+			System.out.println(nameE+nameP+nameC);
+>>>>>>> eb5a2aba06425d7bb8f89e6ef37fe8e8ddb49e91
 		}
 		
 		em9.close();
