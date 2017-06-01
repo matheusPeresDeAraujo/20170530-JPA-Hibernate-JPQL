@@ -123,30 +123,18 @@ public class Main {
 		em8.close();
 		*/
 		EntityManager em9 = Persistence.createEntityManagerFactory("mapeamentoAtividade_unit").createEntityManager();
-<<<<<<< HEAD
 //		Liste o nome do estado, o nome do país ao qual pertence, e sua capital, se houver. 
 		TypedQuery<Object[]> query9 = em9.createQuery("SELECT p.nome, e.nome, c.nome FROM Pais p JOIN p.estados e LEFT JOIN e.cidades c ON c.capital = true", Object[].class);
-=======
-//		Liste o nome do estado, o nome do país ao qual pertence, e sua capital, se houver.
-		TypedQuery<Object[]> query9 = em9.createQuery("SELECT p FROM Pais p JOIN  p.estados e JOIN FETCH e.cidades c WHERE c.capital = 'true' ", Object[].class);
->>>>>>> eb5a2aba06425d7bb8f89e6ef37fe8e8ddb49e91
 		List<Object[]> result = query9.getResultList();
 		 
 		for(Object[] itens : result){
-<<<<<<< HEAD
 			String nameP = (String) itens[0];
 			String nameE = (String) itens[1];
 			String nameC = (String) itens[2];
-			Boolean x = (Boolean) itens[3];
+			//Boolean x = (Boolean) itens[3];
 			
-			System.out.println(nameP + nameE + nameC + x);
-			
-=======
-			String nameE = (String) itens[0];
-			String nameP = (String) itens[1];
-			String nameC = (String) itens[2];
-			System.out.println(nameE+nameP+nameC);
->>>>>>> eb5a2aba06425d7bb8f89e6ef37fe8e8ddb49e91
+			System.out.println(nameP + nameE + nameC);
+	
 		}
 		
 		em9.close();
