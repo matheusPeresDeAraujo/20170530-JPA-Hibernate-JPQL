@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -58,7 +59,7 @@ public class Main {
 		
 		em1.getTransaction().commit();
 		*/
-		
+		/*
 		EntityManager em = Persistence.createEntityManagerFactory("mapeamentoAtividade_unit").createEntityManager();	
 //		Liste os país com com pib maior que 1.000.000.
 		TypedQuery<Pais> query = em.createQuery("select p from Pais p where p.pib > 1000000", Pais.class);
@@ -115,26 +116,28 @@ public class Main {
 		Double avg = query8.getSingleResult();
 		System.out.println(avg);
 		em8.close();
-		
+		*/
 		EntityManager em9 = Persistence.createEntityManagerFactory("mapeamentoAtividade_unit").createEntityManager();
-//		Liste o nome do estado, o nome do país ao qual pertence, e sua capital, se houver.
-		TypedQuery<Object[]> query9 = em9.createQuery("select e.nome, p.nome from Estado e, Pais p ", Object[].class);
+//		Liste o nome do estado, o nome do país ao qual pertence, e sua capital, se houver. 
+		TypedQuery<Object[]> query9 = em9.createQuery("SELECT p.nome, e.nome, c.nome FROM Pais p JOIN p.estados e LEFT JOIN e.cidades c ON c.capital = true", Object[].class);
 		List<Object[]> result = query9.getResultList();
-		
+		 
 		for(Object[] itens : result){
-			String nameE = (String) itens[0];
-			String nameP = (String) itens[1];
+			String nameP = (String) itens[0];
+			String nameE = (String) itens[1];
+			String nameC = (String) itens[2];
+			Boolean x = (Boolean) itens[3];
+			
+			System.out.println(nameP + nameE + nameC + x);
+			
 		}
 		
-		System.out.println(result);
 		em9.close();
 		
 //		Liste os nomes do País, Estado e Cidade sem que haja Lazy Loading.
 
 		
 		
-		
-		//em.getTransaction().commit();
 		
 		
 	}
