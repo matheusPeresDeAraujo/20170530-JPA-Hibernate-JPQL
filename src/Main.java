@@ -58,13 +58,10 @@ public class Main {
 		em1.persist(c2);
 		
 		em1.getTransaction().commit();
-<<<<<<< HEAD
+
 		*/
 		/*
-=======
 		
-		
->>>>>>> eb5a2aba06425d7bb8f89e6ef37fe8e8ddb49e91
 		EntityManager em = Persistence.createEntityManagerFactory("mapeamentoAtividade_unit").createEntityManager();	
 //		Liste os país com com pib maior que 1.000.000.
 		TypedQuery<Pais> query = em.createQuery("select p from Pais p where p.pib > 1000000", Pais.class);

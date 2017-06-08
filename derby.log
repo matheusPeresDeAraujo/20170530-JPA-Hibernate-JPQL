@@ -1,18 +1,11 @@
 ----------------------------------------------------------------
-<<<<<<< HEAD
-Wed May 31 22:11:00 BRT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015c-6134-a718-000002a5bcb0 
+Sun Jun 04 09:17:42 BRT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015c-730a-1eb4-0000027a2c28 
 on database directory /home/matheus/20170530-JPA-Hibernate-JPQL/20170516_atividade with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
 Loaded from file:/home/matheus/20170530-JPA-Hibernate-JPQL/libs/derby.jar
-=======
-Wed May 31 19:00:16 BRT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015c-6086-0a9f-000009131c40 
-on database directory /home/macanha/Downloads/20170530-JPA-Hibernate-JPQL-master/20170516_atividade with class loader sun.misc.Launcher$AppClassLoader@3d4eac69 
-Loaded from file:/home/macanha/Downloads/20170530-JPA-Hibernate-JPQL-master/libs/derby.jar
->>>>>>> eb5a2aba06425d7bb8f89e6ef37fe8e8ddb49e91
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-8u131-b11-0ubuntu1.16.10.2-b11
-user.dir=/home/macanha/Downloads/20170530-JPA-Hibernate-JPQL-master
+java.runtime.version=1.8.0_131-b11
+user.dir=/home/matheus/20170530-JPA-Hibernate-JPQL
 os.name=Linux
 os.arch=amd64
 os.version=4.8.0-52-generic
